@@ -1,0 +1,17 @@
+<h1>Your notes</h1>
+<hr />
+
+<div class="container">
+  <div class="row g-2">
+    @for (note of notesService.notes | async; track note.id) {
+      <div class="col-md-6">
+        <app-user-note [id]="note.id" [title]="note.title" [body]="note.body" />
+      </div>
+    } @empty {
+      <div class="alert alert-warning" role="alert">
+        <i class="bi bi-patch-exclamation-fill"></i>
+        You currently do not have any notes!
+      </div>
+    }
+  </div>
+</div>
