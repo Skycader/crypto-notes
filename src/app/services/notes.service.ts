@@ -35,7 +35,7 @@ export class NotesService {
 
   public addTodo(title: string, body: string) {
     return this.http
-      .post(`${environment.apiUrl}/notes`, {
+      .post(`${environment.apiUrl}/notes/`, {
         title,
         body,
         date: Date.now(),
