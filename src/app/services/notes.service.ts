@@ -28,7 +28,7 @@ export class NotesService {
   ).pipe(
     exhaustMap(() => {
       return this.http.get<NoteInterface[]>(
-        `${environment.apiUrl}/notes?_sort=-date`,
+        `${environment.apiUrl}/notes/?_sort=-date`,
       );
     }),
   );
